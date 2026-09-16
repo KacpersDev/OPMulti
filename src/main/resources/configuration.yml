@@ -1,0 +1,118 @@
+settings:
+  gui:
+    title: '&6&lMultipliers'
+    rows: 6
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      custom-model-data: 0
+      name: ' '
+    lore:
+      collapsed:
+        - ''
+        - '&7Total: &e{total}x'
+        - ''
+        - '&8» &7Click for full breakdown'
+      expanded:
+        - ''
+        - '&7Total: &e{total}x'
+        - ''
+        - '&6Permanent:'
+        - '{permanent}'
+        - ''
+        - '&bTemporary:'
+        - '{temporary}'
+        - ''
+        - '&8» &7Click to collapse'
+      source-format: '&7 - &f{name}: &a+{value}x'
+    types:
+      money:
+        slot: 19
+        display-name: '&a&lMoney Multiplier'
+        material: EMERALD
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.5
+            Armor: 0.25
+            Momentum: 0.1
+          temporary:
+            Boosters: 1.0
+            Stars: 0.5
+      tokens:
+        slot: 20
+        display-name: '&e&lTokens Multiplier'
+        material: SUNFLOWER
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.25
+            Armor: 0.1
+            Momentum: 0.05
+          temporary:
+            Boosters: 0.5
+            Stars: 0.25
+      ancient-coins:
+        slot: 21
+        display-name: '&f&lAncient Coins Multiplier'
+        material: NETHERITE_SCRAP
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.1
+            Armor: 0.1
+            Momentum: 0.05
+          temporary:
+            Boosters: 0.25
+            Stars: 0.1
+      enchant:
+        slot: 22
+        display-name: '&d&lEnchant Multiplier'
+        material: ENCHANTED_BOOK
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.2
+            Armor: 0.1
+            Momentum: 0.05
+          temporary:
+            Boosters: 0.5
+            Stars: 0.2
+      pass:
+        slot: 23
+        display-name: '&b&lPass Multiplier'
+        material: PAPER
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.1
+            Armor: 0.05
+            Momentum: 0.05
+          temporary:
+            Boosters: 0.25
+            Stars: 0.1
+      armor:
+        slot: 24
+        display-name: '&9&lArmor Multiplier'
+        material: DIAMOND_CHESTPLATE
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.15
+            Armor: 0.3
+            Momentum: 0.1
+          temporary:
+            Boosters: 0.3
+            Stars: 0.15
+      tamer:
+        slot: 25
+        display-name: '&6&lTamer Multiplier'
+        material: LEAD
+        custom-model-data: 0
+        sources:
+          permanent:
+            Pets: 0.4
+            Armor: 0.1
+            Momentum: 0.05
+          temporary:
+            Boosters: 0.4
+            Stars: 0.2

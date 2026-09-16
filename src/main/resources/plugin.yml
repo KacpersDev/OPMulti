@@ -1,0 +1,17 @@
+name: OPMulti
+version: '${version}'
+
+main: dev.kacperm.opmulti.OPMulti
+api-version: '1.21.4'
+load: POSTWORLD
+
+commands:
+  multi:
+    description: Opens the multipliers menu.
+    usage: /multi
+    permission: opmulti.multi
+
+permissions:
+  opmulti.multi:
+    description: Allows use of /multi
+    default: true
