@@ -11,6 +11,8 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
     compileOnly("org.projectlombok:lombok:1.18.38")
     annotationProcessor("org.projectlombok:lombok:1.18.38")
+
+    implementation(files("./libs/OPBoosters-1.0-SNAPSHOT.jar"))
 }
 
 java {

@@ -18,7 +18,7 @@ public class MultiCommand implements CommandExecutor {
             return true;
         }
 
-        new MultiGUI().open(player);
+        new MultiGUI(player).open();
         return true;
     }
 }

@@ -27,11 +27,14 @@ import java.util.Set;
 public class MultiGUI implements InventoryHolder {
 
     private final MultiManager multiManager = new MultiManager();
+    private final Player owner;
     private final Inventory inventory;
     private final Set<MultiType> expandedTypes = new HashSet<>();
     private final Map<Integer, MultiType> typeSlots = new HashMap<>();
 
-    public MultiGUI() {
+    public MultiGUI(Player owner) {
+        this.owner = owner;
+
         YamlConfiguration config = OPMulti.getInstance().getConfiguration().getConfiguration();
 
         int rows = config.getInt("settings.gui.rows", 6);
@@ -88,18 +91,19 @@ public class MultiGUI implements InventoryHolder {
         }
 
         MultiData data = this.multiManager.getData(type);
+        double total = this.multiManager.getTotalMultiplier(this.owner, type);
         boolean expanded = this.expandedTypes.contains(type);
 
         List<String> loreTemplate = config.getStringList(expanded ? "settings.gui.lore.expanded" : "settings.gui.lore.collapsed");
 
         return new ItemBuilder(material)
                 .name(typeSection.getString("display-name", type.name()))
-                .lore(this.applyPlaceholders(config, loreTemplate, data))
+                .lore(this.applyPlaceholders(config, loreTemplate, total, data))
                 .customModelData(typeSection.getInt("custom-model-data", 0))
                 .build();
     }
 
-    private List<String> applyPlaceholders(YamlConfiguration config, List<String> loreTemplate, MultiData data) {
+    private List<String> applyPlaceholders(YamlConfiguration config, List<String> loreTemplate, double total, MultiData data) {
         String sourceFormat = config.getString("settings.gui.lore.source-format", "&7 - &f{name}: &a+{value}x");
         String permanent = this.formatSources(sourceFormat, data.permanent());
         String temporary = this.formatSources(sourceFormat, data.temporary());
@@ -107,7 +111,7 @@ public class MultiGUI implements InventoryHolder {
         List<String> lore = new ArrayList<>();
         for (String line : loreTemplate) {
             String replaced = line
-                    .replace("{total}", this.format(data.total()))
+                    .replace("{total}", this.format(total))
                     .replace("{permanent}", permanent)
                     .replace("{temporary}", temporary);
 
@@ -162,8 +166,8 @@ public class MultiGUI implements InventoryHolder {
         return this.typeSlots.get(slot);
     }
 
-    public void open(Player player) {
-        player.openInventory(this.inventory);
+    public void open() {
+        this.owner.openInventory(this.inventory);
     }
 
     @Override

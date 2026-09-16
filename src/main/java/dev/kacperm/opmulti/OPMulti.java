@@ -8,6 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.gangsta.opboosters.OPBoosters;
+import org.gangsta.opboosters.api.BoosterAPI;
 
 import java.io.File;
 
@@ -26,6 +28,12 @@ public final class OPMulti extends JavaPlugin {
         this.loadConfigurations();
         this.loadListeners();
         this.loadCommands();
+
+        boolean opBoostersEnabled = getServer().getPluginManager().getPlugin("OPBoosters") instanceof OPBoosters
+                && BoosterAPI.isAvailable();
+        if (!opBoostersEnabled) {
+            getLogger().warning("OPBoosters was not found or is not enabled - multiplier totals will show as 1.0x.");
+        }
     }
 
     @Override

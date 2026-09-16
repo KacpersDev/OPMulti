@@ -30,6 +30,7 @@ settings:
         display-name: '&a&lMoney Multiplier'
         material: EMERALD
         custom-model-data: 0
+        booster-type: MONEY
         sources:
           permanent:
             Pets: 0.5
@@ -43,6 +44,7 @@ settings:
         display-name: '&e&lTokens Multiplier'
         material: SUNFLOWER
         custom-model-data: 0
+        booster-type: TOKENS
         sources:
           permanent:
             Pets: 0.25
@@ -56,6 +58,7 @@ settings:
         display-name: '&f&lAncient Coins Multiplier'
         material: NETHERITE_SCRAP
         custom-model-data: 0
+        booster-type: ANCIENT_COINS
         sources:
           permanent:
             Pets: 0.1
@@ -69,6 +72,8 @@ settings:
         display-name: '&d&lEnchant Multiplier'
         material: ENCHANTED_BOOK
         custom-model-data: 0
+        # No dedicated BoosterType exists for this yet, falls back to the shared CUSTOM bucket.
+        booster-type: CUSTOM
         sources:
           permanent:
             Pets: 0.2
@@ -82,6 +87,7 @@ settings:
         display-name: '&b&lPass Multiplier'
         material: PAPER
         custom-model-data: 0
+        booster-type: CUSTOM
         sources:
           permanent:
             Pets: 0.1
@@ -95,6 +101,7 @@ settings:
         display-name: '&9&lArmor Multiplier'
         material: DIAMOND_CHESTPLATE
         custom-model-data: 0
+        booster-type: ARMOR
         sources:
           permanent:
             Pets: 0.15
@@ -108,6 +115,7 @@ settings:
         display-name: '&6&lTamer Multiplier'
         material: LEAD
         custom-model-data: 0
+        booster-type: CUSTOM
         sources:
           permanent:
             Pets: 0.4

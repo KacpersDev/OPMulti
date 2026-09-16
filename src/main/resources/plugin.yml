@@ -4,6 +4,7 @@ version: '${version}'
 main: dev.kacperm.opmulti.OPMulti
 api-version: '1.21.4'
 load: POSTWORLD
+depend: [OPBoosters]
 
 commands:
   multi:
